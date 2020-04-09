@@ -1,0 +1,2 @@
+# struct2-hibernate
+通过struct2和hibernate框架来搭建网站，原理等最后完成全部开发后写
