@@ -16,10 +16,18 @@
     		<result name="register_success">/users/Users_login_success.jsp</result>
     		<result name="register_failure">/users/Users_register.jsp</result>
     		<result name="query_success">/users/Users_query_success.jsp</result>
-    		<result name="delete_success" type="chain">Users_queryAllUsers</result>
-    		<result name="input">/users/Users_login.jsp</result>
-    	</action>
+			<result name="add_success" type="chain">Users_queryAllUsers</result>
+			<result name="delete_success" type="chain">Users_queryAllUsers</result>   <!--chain表示后在连接一个动作，服务器内部转发，只是这里只能是一个action，不能是一个action界面-->
+			<result name="modify_success">/users/Users_modify.jsp</result>
+			<result name="save_success">/users/Users_modify_success.jsp</result>
+			<result name="input">/users/Users_login.jsp</result>
 
+    	</action>
     </package>
+
+	<package name="students" namespace="/students" extends="default">
+		<action name="*_*" class="action.{1}Action" method="{2}">
+		</action>
+	</package>
     
 </struts>
