@@ -13,7 +13,7 @@
 %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Login</title>
 </head>
 <body>
 <form name="loginForm" action="<%=path%>/users/Users_login.action" method="post">
