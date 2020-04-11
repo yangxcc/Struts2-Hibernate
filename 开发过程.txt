@@ -1,0 +1,12 @@
+开发过程
+1、导入Struts2和hibernate框架开发所需jar包（包括单元测试的jar包）
+2、配置web.xml，创建struts.xml，配置hibernate.cfg.xml（添加一些连接数据库的配置语句）
+4、创建实体类/entity/Users,(JavaBean)
+5、生成实体类的关系映射文件Users.hbm.xml，并将其添加到hibernate.cfg.xml
+6、使用hibernate提供的工具SchemaExport生成表结构，创建测试类，使用单元测试
+7、创建自定义的session工厂类，体现单例设计模式，以便将来使用这个工具类来生成一个session对象
+8、设计用户接口（Dao）以及接口对应业务逻辑实现类(DaoImpl)
+9、设计所有action的父类，需要继承ActionSupport，为了获得常用的内置对象（request、response、session、application等）采用耦合IOC方式注入属性
+10、设计用户action类，采用模型驱动接受表单数据，根据返回字符串在struts.xml文件中进行注册
+11、页面调用，在form表单中的action属性中连接一个动作。动作的写法要与struts.xml中action配置的格式相吻合。
+12、启动功能和上述过程一样，在进行某个动作之前要在action类中进行编写完成，在struts2.xml文件中进行注册，然后页面调用。
