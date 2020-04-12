@@ -26,3 +26,9 @@ Struts2本质上相当于一个servlet，在MVC设计模式中，Struts2采用�
 5. 提交事务 <br>
 6. 关闭Session <br>
 7. 关闭SessionFactory <br>
+
+## 数据流通（以登陆为例）
+* 首先，数据在jsp表单中被输入，在表单action属性那里注册处理表单属性的方法，属性方法的填写方式需要在之前在struts.xml中规定（通配符的使用）<br>
+* 第二，数据在struts.xml的派发下被送到UsersAction中的login()方法进行处理，在这里需要注意的是表单数据的获取是使用的struts2框架提供的模型驱动的方式获得表单数据，使用模型驱动，获得的对象可以不实现get,set方法，但是要实例化<br>
+* 在方法中返回login_success或者login_failure的字符串结果，把结果在struts.xml文件中注册，返回这个结果对应的下一步动作。<br>
+* 注意：hibernate框架在实现Dao层接口时被用到，因为要实现方法，必须要获取数据库中的数据，然后再action动作类中可以直接调用Dao层接口实现的方法。
